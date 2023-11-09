@@ -1,4 +1,4 @@
-module gorm.io/driver/postgres
+module github.com/lixindb/gorm-postgres
 
 go 1.18
 

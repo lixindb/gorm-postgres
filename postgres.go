@@ -69,9 +69,11 @@ func (dialector Dialector) Initialize(db *gorm.DB) (err error) {
 		if err != nil {
 			return
 		}
-		if dialector.Config.PreferSimpleProtocol {
-			config.DefaultQueryExecMode = pgx.QueryExecModeSimpleProtocol
-		}
+
+		config.DefaultQueryExecMode = pgx.QueryExecModeDescribeExec
+		// if dialector.Config.PreferSimpleProtocol {
+		// 	config.DefaultQueryExecMode = pgx.QueryExecModeSimpleProtocol
+		// }
 		result := timeZoneMatcher.FindStringSubmatch(dialector.Config.DSN)
 		if len(result) > 2 {
 			config.RuntimeParams["timezone"] = result[2]
