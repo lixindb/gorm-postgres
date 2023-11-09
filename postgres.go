@@ -71,6 +71,7 @@ func (dialector Dialector) Initialize(db *gorm.DB) (err error) {
 		}
 
 		config.DefaultQueryExecMode = pgx.QueryExecModeDescribeExec
+
 		// if dialector.Config.PreferSimpleProtocol {
 		// 	config.DefaultQueryExecMode = pgx.QueryExecModeSimpleProtocol
 		// }
